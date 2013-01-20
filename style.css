@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Load the front-end adminbar styles. BP-Default's adminbar.css will still be used in the WordPress Dashboard. */
+/* "all" text prevents IE7 from loading. buddybar.css is not compatible with IE7 and below. */
+@import url( assets/css/buddybar.css ) all;
