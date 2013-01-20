@@ -2,13 +2,12 @@
 Styles for the Admin Bar (formerly Buddybar)
 --------------------------------------------------------------*/
 #wpadminbar {
-	position: absolute !important;
-	top: 0px !important;
-	left: 50% !important; /* centers adminbar */
-	margin-left: -605px !important; /* must be half of the width of next line */
-	width: 1150px !important; /* must be same width as #wrapper in _inc/css/default.css */
-	background: transparent !important;
-	z-index: auto !important;
+ background: none repeat scroll 0 0 transparent !important;
+ margin-left: -20px;
+ position: absolute !important;
+ top: 0 !important;
+ z-index: auto !important;
+ min-width:640px;
 }
 #wpadminbar, #wpadminbar * { font: 400 12px/28px sans-serif !important; }
 #wpadminbar .quicklinks {
@@ -128,3 +127,13 @@ BuddyPress Admin Bar
 #wpadminbar #adminbarsearch .adminbar-input { background-image:url('../images/admin-bar-sprite.png') !important; }
 #wpadminbar #adminbarsearch .adminbar-input { border-radius: 2px 2px 8px 8px; color:#cc0000 !important; }
 #wpadminbar #adminbarsearch .adminbar-input:focus { color:#222 !important; }
+
+
+
+@media only screen and (max-width: 640px) { 
+#wpadminbar {
+ background: #CC0000 !important;
+ min-width:inherit;
+ margin-left:0px;
+}
+}
