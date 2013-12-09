@@ -52,10 +52,18 @@ function mla_admin_bar_render() {
 	//Remove the WordPress logo...
 	$wp_admin_bar->remove_menu('wp-logo'); 
 
+	//Remove the search box ...
+	$wp_admin_bar->remove_menu('adminbar-search'); 
+
 	$wp_admin_bar->add_menu( array(
 		'id' => 'mla-link',
 		'title' => __('MLA Commons'),
 		'href' => network_home_url()
+	) );
+	$wp_admin_bar->add_menu( array(
+		'id' => 'mla-search',
+		'title' => __('Search'),
+		'href' => site_url() //FIXME: put search url from custom google search here  
 	) );
 }
 add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );

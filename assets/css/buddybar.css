@@ -3,20 +3,23 @@ Styles for the Admin Bar (formerly Buddybar)
 --------------------------------------------------------------*/
 #wpadminbar {
 	background: url("") repeat-x scroll center top #cc0000 !important;
-	position: absolute !important;
 	top: 0 !important;
-	z-index: auto !important;
+	z-index: 999999 !important;  
 	min-width:640px;
 }
+#wpadminbar #wp-admin-bar-mla-link { 
+	background-color: #8f0000; 
+} 
+#wpadminbar #adminbarsearch { display: none; } 
+
 #wpadminbar, #wpadminbar * { font: 400 12px/28px sans-serif !important; }
 #wpadminbar .quicklinks {
 	width: auto !important;
 	border: none !important;
-	z-index: 99999 !important;
 }
 #wpadminbar .ab-top-menu,
 #wpadminbar .ab-top-secondary {
-	background: none repeat scroll 0 0 transparent !important;
+	background: none repeat scroll 0 0 #cc0000 !important;
 	margin: 0 0 0 15px  !important;
 	border: 0px none #ccc  !important;
 	-webkit-border-radius: 0px 0px 10px 10px;
@@ -37,7 +40,7 @@ Styles for the Admin Bar (formerly Buddybar)
 WordPress Admin Bar
 --------------------------------------------------------------*/
 #wpadminbar .quicklinks .ab-top-menu > li > a, #wpadminbar .quicklinks .ab-top-menu > li > .ab-empty-item {
-	border-right: 1px solid #990000;
+	border-right: none;
 }
 #wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-bp-notifications > a { border-right: 1px solid #990000 !important; }
 #wpadminbar .quicklinks .ab-top-menu > li {
