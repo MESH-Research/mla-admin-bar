@@ -48,12 +48,15 @@ function mla_admin_bar_render() {
 	if (!is_admin() && !is_super_admin()) {
 		$wp_admin_bar->remove_menu('blog-1', 'my-sites');
 	}
+	
+	//Remove the WordPress logo...
+	$wp_admin_bar->remove_menu('wp-logo'); 
 
-    $wp_admin_bar->add_menu( array(
-        'id' => 'mla-link',
-        'title' => __('MLA Commons'),
-        'href' => network_home_url()
-    ) );
+	$wp_admin_bar->add_menu( array(
+		'id' => 'mla-link',
+		'title' => __('MLA Commons'),
+		'href' => network_home_url()
+	) );
 }
 add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
 
