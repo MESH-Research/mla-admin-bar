@@ -2,26 +2,23 @@
 Styles for the Admin Bar (formerly Buddybar)
 --------------------------------------------------------------*/
 #wpadminbar {
- background: none repeat scroll 0 0 transparent !important;
- margin-left: -20px;
- position: absolute !important;
- top: 0 !important;
- z-index: auto !important;
- min-width:640px;
+	background: url("") repeat-x scroll center top #cc0000 !important;
+	position: absolute !important;
+	top: 0 !important;
+	z-index: auto !important;
+	min-width:640px;
 }
 #wpadminbar, #wpadminbar * { font: 400 12px/28px sans-serif !important; }
 #wpadminbar .quicklinks {
 	width: auto !important;
-	float: right !important;
 	border: none !important;
 	z-index: 99999 !important;
 }
 #wpadminbar .ab-top-menu,
 #wpadminbar .ab-top-secondary {
-	float: left !important;
+	background: none repeat scroll 0 0 transparent !important;
 	margin: 0 0 0 15px  !important;
 	border: 0px none #ccc  !important;
-	background: url("") repeat-x scroll center top #cc0000 !important;
 	-webkit-border-radius: 0px 0px 10px 10px;
 	-moz-border-radius: 0px 0px 10px 10px;
 	border-radius: 0px 0px 10px 10px;

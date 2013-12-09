@@ -11,13 +11,51 @@ Description: This plugin adds the red admin bar to any theme.
 
 
 /**
-	* Enqueue plugin style-file
-	*/
+* Enqueue plugin style-file
+*/
 function mla_add_my_stylesheet() {
 				// Respects SSL, Style.css is relative to the current file
 				wp_register_style( 'mla-admin-bar-style', plugins_url('style.css', __FILE__) );
 				wp_enqueue_style( 'mla-admin-bar-style' );
 }
 add_action( 'wp_enqueue_scripts', 'mla_add_my_stylesheet' );
+
+
+/**
+* Add link to admin bar
+*/
+
+function mla_admin_bar_render() {
+    global $wp_admin_bar;
+
+    // we can remove a menu item, like the Comments link, just by knowing the right $id
+    // $wp_admin_bar->remove_menu('comments');
+	$wp_admin_bar->remove_menu('site-name');
+
+	if(is_user_logged_in()) {
+		$wp_admin_bar->remove_menu('my-sites');
+	    $wp_admin_bar->add_menu( array(
+			'parent' => false,
+	        'id' => 'my-sites',
+			'title' => __('My Sites'),
+	        'href' => '#'
+	    ) );
+	}
+
+
+    // or we can remove a submenu, like New Link.
+    // $wp_admin_bar->remove_menu('new-link', 'new-content');
+	if (!is_admin() && !is_super_admin()) {
+		$wp_admin_bar->remove_menu('blog-1', 'my-sites');
+	}
+
+    $wp_admin_bar->add_menu( array(
+        'id' => 'mla-link',
+        'title' => __('MLA Commons'),
+        'href' => network_home_url()
+    ) );
+}
+add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
+
 
 ?>
