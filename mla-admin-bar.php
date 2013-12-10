@@ -71,17 +71,29 @@ function mla_admin_bar_render() {
 
 add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
 
-                add_action( 'admin_bar_menu', 'wp_admin_bar_mla_link', 20 );
-                // Site related.
-                add_action( 'admin_bar_menu', 'wp_admin_bar_site_menu', 40 );
-                add_action( 'admin_bar_menu', 'wp_admin_bar_updates_menu', 60 );
 
-                // Content related.
-                if ( ! is_network_admin() && ! is_user_admin() ) {
-                        add_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 800 );
-                        add_action( 'admin_bar_menu', 'wp_admin_bar_new_content_menu', 30 );
-                }
+/* Experimental Section!!! 
+ * adapted from wp-includes/class-wp-admin-bar.php 
+ * Changing these integer parameters (20, 40, etc) 
+ * theoretically changes the order of admin bar items
+ * yet it doesn't always work as expected, and admin bar items added above
+ * (i.e. "MLA Commons") don't seem to be able to be reordered this way. 
+ * More experimentation required. 
+ */ 
 
-                add_action( 'admin_bar_menu', 'wp_admin_bar_edit_menu', 80 );
+add_action( 'admin_bar_menu', 'wp_admin_bar_mla_link', 20 );
+// Site related.
+add_action( 'admin_bar_menu', 'wp_admin_bar_site_menu', 40 );
+add_action( 'admin_bar_menu', 'wp_admin_bar_updates_menu', 60 );
+
+// Content related.
+if ( ! is_network_admin() && ! is_user_admin() ) {
+	add_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 800 );
+	add_action( 'admin_bar_menu', 'wp_admin_bar_new_content_menu', 30 );
+}
+
+add_action( 'admin_bar_menu', 'wp_admin_bar_edit_menu', 80 );
+
+/* End of Experimental Section */ 
 
 ?>
