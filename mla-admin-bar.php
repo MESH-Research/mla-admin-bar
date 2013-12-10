@@ -63,10 +63,25 @@ function mla_admin_bar_render() {
 	$wp_admin_bar->add_menu( array(
 		'id' => 'mla-search',
 		'title' => __('Search'),
-		'href' => site_url() //FIXME: put search url from custom google search here  
+		'href' => site_url().'/site-search/' 
 	) );
+
+
 }
+
 add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
 
+                add_action( 'admin_bar_menu', 'wp_admin_bar_mla_link', 20 );
+                // Site related.
+                add_action( 'admin_bar_menu', 'wp_admin_bar_site_menu', 40 );
+                add_action( 'admin_bar_menu', 'wp_admin_bar_updates_menu', 60 );
+
+                // Content related.
+                if ( ! is_network_admin() && ! is_user_admin() ) {
+                        add_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 800 );
+                        add_action( 'admin_bar_menu', 'wp_admin_bar_new_content_menu', 30 );
+                }
+
+                add_action( 'admin_bar_menu', 'wp_admin_bar_edit_menu', 80 );
 
 ?>
