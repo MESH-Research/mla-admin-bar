@@ -81,7 +81,8 @@ add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
  * More experimentation required. 
  */ 
 
-add_action( 'admin_bar_menu', 'wp_admin_bar_mla_link', 20 );
+/* 
+add_action( 'admin_bar_menu', 'mla-link', 20 );
 // Site related.
 add_action( 'admin_bar_menu', 'wp_admin_bar_site_menu', 40 );
 add_action( 'admin_bar_menu', 'wp_admin_bar_updates_menu', 60 );
@@ -93,6 +94,8 @@ if ( ! is_network_admin() && ! is_user_admin() ) {
 }
 
 add_action( 'admin_bar_menu', 'wp_admin_bar_edit_menu', 80 );
+
+*/ 
 
 /* End of Experimental Section */ 
 
