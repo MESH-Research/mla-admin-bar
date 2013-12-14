@@ -55,6 +55,7 @@ function mla_admin_bar_render() {
 	//Remove the search box ...
 	$wp_admin_bar->remove_menu('adminbar-search'); 
 
+	/* Disabling this temporarily 
 	$wp_admin_bar->add_menu( array(
 		'id' => 'mla-link',
 		'title' => __('MLA Commons'),
@@ -65,38 +66,37 @@ function mla_admin_bar_render() {
 		'title' => __('Search'),
 		'href' => site_url().'/site-search/' 
 	) );
-
+	 */
 
 }
 
 add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
 
+// new way to do this modeled after
+// this stackexchange answer: 
+// http://wordpress.stackexchange.com/questions/125997/how-can-i-specify-the-position-of-an-admin-bar-item-added-with-wp-admin-bar-ad/126326?iemail=1&noredirect=1#126326 
+// -JR
 
-/* Experimental Section!!! 
- * adapted from wp-includes/class-wp-admin-bar.php 
- * Changing these integer parameters (20, 40, etc) 
- * theoretically changes the order of admin bar items
- * yet it doesn't always work as expected, and admin bar items added above
- * (i.e. "MLA Commons") don't seem to be able to be reordered this way. 
- * More experimentation required. 
- */ 
+function mla_add_commonslink($admin_bar) { 
+	$args = array( 
+		'id'    => 'mla-link', 
+		'title' => __('MLA Commons'),
+		'href'  => network_home_url()
+	); 
+	$admin_bar->add_menu($args); 
+} 
 
-/* 
-add_action( 'admin_bar_menu', 'mla-link', 20 );
-// Site related.
-add_action( 'admin_bar_menu', 'wp_admin_bar_site_menu', 40 );
-add_action( 'admin_bar_menu', 'wp_admin_bar_updates_menu', 60 );
+add_action('admin_bar_menu', 'mla_add_commonslink', 10); 
 
-// Content related.
-if ( ! is_network_admin() && ! is_user_admin() ) {
-	add_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 800 );
-	add_action( 'admin_bar_menu', 'wp_admin_bar_new_content_menu', 30 );
-}
+function mla_add_searchlink($admin_bar) { 
+	$args = array( 
+		'id' => 'mla-search',
+		'title' => __('Search'),
+		'href' => site_url().'/site-search/' 
+	); 
+	$admin_bar->add_menu($args); 
+} 
 
-add_action( 'admin_bar_menu', 'wp_admin_bar_edit_menu', 80 );
-
-*/ 
-
-/* End of Experimental Section */ 
+add_action('admin_bar_menu', 'mla_add_searchlink', 20); 
 
 ?>
