@@ -1,6 +1,63 @@
-@charset "UTF-8";
-/* CSS Document */
+/* WP 3.8 Admin Bar Tweaks */
 
-/* Load the front-end adminbar styles. BP-Default's adminbar.css will still be used in the WordPress Dashboard. */
-/* "all" text prevents IE7 from loading. buddybar.css is not compatible with IE7 and below. */
-@import url( assets/css/buddybar.css ) all;
+/* Add icons */
+
+#wp-admin-bar-mla-link .ab-item:before {
+  top: 2px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f102";
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wp-admin-bar-mla-search .ab-item:before {
+  top: 2px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f179";
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wp-admin-bar-bp-login .ab-item:before {
+  top: 2px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f112";
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hover state */
+
+#wpadminbar .ab-top-menu>li>.ab-item:focus, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar .ab-top-menu>li:hover>.ab-item, #wpadminbar .ab-top-menu>li.hover>.ab-item {
+  background: #c00;
+  color: #fff;
+}
+
+#wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:focus, #wpadminbar .quicklinks .menupop ul li a:hover strong, #wpadminbar .quicklinks .menupop ul li a:focus strong, #wpadminbar .quicklinks .menupop.hover ul li a:hover, #wpadminbar .quicklinks .menupop.hover ul li a:focus, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus, #wpadminbar li:hover .ab-icon:before, #wpadminbar li:hover .ab-item:before, #wpadminbar li a:focus .ab-icon:before, #wpadminbar li .ab-item:focus:before, #wpadminbar li.hover .ab-icon:before, #wpadminbar li.hover .ab-item:before, #wpadminbar li:hover #adminbarsearch:before {
+  color: #fff;
+}
+
+
+/* Hide old search box */
+
+#wp-admin-bar-search {
+  display: none !important;
+}
+
+/* Hide superfluous log out link */
+
+#wp-admin-bar-wpa-logout {
+  display: none !important;
+}
+
+/* Better spacing */
+
+#wpadminbar .quicklinks>ul>li>a {
+  padding-right: 12px;
+}
