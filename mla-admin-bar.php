@@ -80,4 +80,25 @@ function mla_add_searchlink($admin_bar) {
 
 add_action('admin_bar_menu', 'mla_add_searchlink', 15);
 
+// add breadcrumb to blogs pages, so users can get back to blogs list easily. 
+// -JR
+function mla_add_blog_breadcrumb($admin_bar) {
+	$blogid = get_current_blog_id(); 
+	// don't show blog breadcrumb for these blogs
+	$disabled_blogids = array( 
+		0, // just in case
+		1, // main Commons page 
+		14, // news page, also displayed on main Commons page
+		15, // faq page, also displayed on main Commons page
+	); 
+	if ( ! in_array($blogid, $disabled_blogids)) { 
+		$args = array(
+			'id' => 'mla-blog-breadcrumbs',
+			'title' => 'Blogs', 
+			'href' => network_home_url() . 'blogs'
+		);
+		$admin_bar->add_menu($args);
+	} 
+}
+add_action('admin_bar_menu', 'mla_add_blog_breadcrumb', 12);
 ?>
