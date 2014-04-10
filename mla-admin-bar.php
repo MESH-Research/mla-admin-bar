@@ -96,7 +96,7 @@ function mla_add_blog_breadcrumb($admin_bar) {
 		14, // news page, also displayed on main Commons page
 		15, // faq page, also displayed on main Commons page
 	); 
-	if ( $url && ! in_array($this_blogid, $disabled_blogids)) { 
+	if ( $url && $group_id && ! in_array($this_blogid, $disabled_blogids)) { 
 		$args = array(
 			'id' => 'mla-group-breadcrumb',
 			'title' => $this_blog_name, 
