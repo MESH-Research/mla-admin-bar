@@ -22,6 +22,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#wp-admin-bar-mla-group-breadcrumb .ab-item:before { 
+  top: 2px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f307"; /* "People" icon */ 
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 
+
 #wp-admin-bar-bp-login .ab-item:before {
   top: 2px;
   z-index: 20;
@@ -31,6 +41,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* Hover state */
 

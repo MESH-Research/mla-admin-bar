@@ -98,7 +98,7 @@ function mla_add_blog_breadcrumb($admin_bar) {
 	); 
 	if ( $url && ! in_array($this_blogid, $disabled_blogids)) { 
 		$args = array(
-			'id' => 'mla-blog-breadcrumbs',
+			'id' => 'mla-group-breadcrumb',
 			'title' => $this_blog_name, 
 			'href' => $url, 
 		);
