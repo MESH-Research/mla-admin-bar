@@ -73,7 +73,7 @@ function mla_add_searchlink($admin_bar) {
 	$args = array(
 		'id' => 'mla-search',
 		'title' => __('Search'),
-		'href' => network_home_url() . 'advanced-search/'
+		'href' => network_home_url() . 'site-search/'
 	);
 	$admin_bar->add_menu($args);
 }
