@@ -134,3 +134,53 @@ function mla_admin_bar_change_howdy_target( $wp_admin_bar ) {
 	}
 }
 add_action( 'admin_bar_menu', 'mla_admin_bar_change_howdy_target', 11 );
+
+/* Custom my-account menu that links to user/profile
+ * instead of user/profile/edit. 
+ */ 
+function mla_admin_bar_my_account_menu($wp_admin_bar) { 
+	$user_id      = get_current_user_id();
+	$current_user = wp_get_current_user();
+	$edit_profile_url  = get_edit_profile_url( $user_id );
+	if (substr($edit_profile_url, -5) == 'edit/') { 
+		$profile_url = substr($edit_profile_url, 0, -5); 
+	} 
+
+	if ( ! $user_id )
+		return;
+
+	$wp_admin_bar->add_group( array(
+		'parent' => 'my-account',
+		'id'     => 'user-actions',
+	) );
+
+	$user_info  = get_avatar( $user_id, 64 );
+	$user_info .= "<span class='display-name'>{$current_user->display_name}</span>";
+
+	if ( $current_user->display_name !== $current_user->user_login )
+		$user_info .= "<span class='username'>{$current_user->user_login}</span>";
+
+	$wp_admin_bar->add_menu( array(
+		'parent' => 'user-actions',
+		'id'     => 'user-info',
+		'title'  => $user_info,
+		'href'   => $profile_url,
+		'meta'   => array(
+			'tabindex' => -1,
+		),
+	) );
+	$wp_admin_bar->add_menu( array(
+		'parent' => 'user-actions',
+		'id'     => 'edit-profile',
+		'title'  => __( 'Edit My Profile' ),
+		'href' => $profile_url,
+	) );
+	$wp_admin_bar->add_menu( array(
+		'parent' => 'user-actions',
+		'id'     => 'logout',
+		'title'  => __( 'Log Out' ),
+		'href'   => wp_logout_url(),
+	) );
+}
+remove_action( 'admin_bar_menu', 'wp_admin_bar_my_account_menu'); 
+add_action( 'admin_bar_menu', 'mla_admin_bar_my_account_menu');
