@@ -173,7 +173,7 @@ function mla_admin_bar_my_account_menu($wp_admin_bar) {
 		'parent' => 'user-actions',
 		'id'     => 'edit-profile',
 		'title'  => __( 'Edit My Profile' ),
-		'href' => $profile_url,
+		'href' => $edit_profile_url,
 	) );
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'user-actions',
@@ -184,3 +184,14 @@ function mla_admin_bar_my_account_menu($wp_admin_bar) {
 }
 remove_action( 'admin_bar_menu', 'wp_admin_bar_my_account_menu'); 
 add_action( 'admin_bar_menu', 'mla_admin_bar_my_account_menu');
+
+/** 
+ * Remove admin bar profile items, since they're already represented by 
+ * members/user/profile tabs. Also, the dropdown is a little clunky. 
+ * See https://github.com/mlaa/cbox-mla/issues/27
+ */ 
+function mla_remove_admin_bar_profile_items() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('my-account-buddypress');
+}
+add_action('wp_before_admin_bar_render', 'mla_remove_admin_bar_profile_items', 0);
