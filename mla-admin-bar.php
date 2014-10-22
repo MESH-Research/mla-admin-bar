@@ -172,7 +172,7 @@ function mla_admin_bar_my_account_menu($wp_admin_bar) {
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'user-actions',
 		'id'     => 'edit-profile',
-		'title'  => __( 'Edit My Profile' ),
+		'title'  => __( 'Edit My Portfolio' ),
 		'href' => $edit_profile_url,
 	) );
 	$wp_admin_bar->add_menu( array(
