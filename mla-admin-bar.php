@@ -61,7 +61,7 @@ add_action( 'wp_before_admin_bar_render', 'mla_admin_bar_render' );
 function mla_add_commonslink($admin_bar) {
 	$args = array(
 		'id'    => 'mla-link',
-		'title' => __('MLA Commons'),
+		'title' => get_site_option('site_name'),
 		'href'  => network_home_url()
 	);
 	$admin_bar->add_menu($args);
