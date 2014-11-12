@@ -96,6 +96,16 @@ function mla_add_blog_breadcrumb($admin_bar) {
 		14, // news page, also displayed on main Commons page
 		15, // faq page, also displayed on main Commons page
 	); 
+	if ( 'hidden' == $group->status ) { 
+		if ( ! bp_loggedin_user_id() ) { 
+			// logged-out users can't see hidden pages
+			return;
+		} 
+		if ( ! is_super_admin() && ! groups_is_user_member( bp_loggedin_user_id(), $group_id ) ) { 
+			// non-members of hidden groups can't see those groups
+			return; 
+		} 
+	} 	
 	if ( $url && $group_id && ! in_array($this_blogid, $disabled_blogids)) { 
 		$args = array(
 			'id' => 'mla-group-breadcrumb',
