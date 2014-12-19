@@ -72,3 +72,8 @@
 #wpadminbar .quicklinks>ul>li>a {
   padding-right: 12px;
 }
+
+/* "Me" Menu Avatar */ 
+#wpadminbar .avatar.avatar-28 { 
+	width: 22px; 
+} 
