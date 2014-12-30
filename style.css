@@ -74,6 +74,12 @@
 	border: 1px solid #444; 
 	border-radius: 3px; 
 } 
+.wp-admin #wpadminbar .avatar.avatar-28 { 
+	/* I don't know why, but the version of this avatar
+	 * that appears in /wp-admin is misaligned by a few pixels.
+	 */ 
+	margin-top: 4px; 
+} 
 
 #wpadminbar #wp-admin-bar-mla-bp-notifications .pending-count { 
 	background-color: #07d; 

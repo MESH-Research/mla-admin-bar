@@ -15,6 +15,7 @@ function mla_add_my_stylesheet() {
 	wp_enqueue_style( 'mla-admin-bar-style' );
 }
 add_action( 'wp_enqueue_scripts', 'mla_add_my_stylesheet' );
+add_action( 'admin_enqueue_scripts', 'mla_add_my_stylesheet' );
 
 /**
 * Add link to admin bar
