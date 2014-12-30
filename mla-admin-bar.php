@@ -35,7 +35,15 @@ function mla_admin_bar_render() {
 			'title' => __( 'My Sites' ),
 			'href' => '/', 
 		) );
-	}
+	} else { 
+		$wp_admin_bar->remove_menu( 'bp-login' ); 
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'bp-login', 
+			'parent' => 'top-secondary', 
+			'title' => __( 'Log in' ), 
+			'href' => wp_login_url( bp_get_requested_url() ),  
+		) ); 
+	} 
 
 	// or we can remove a submenu, like New Link.
 	// $wp_admin_bar->remove_menu('new-link', 'new-content');
