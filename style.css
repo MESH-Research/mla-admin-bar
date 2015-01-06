@@ -55,13 +55,7 @@
 }
 
 
-/* Hide old search box */
-#wp-admin-bar-search {
-  display: none !important;
-}
-
 /* Hide superfluous log out link */
-
 #wp-admin-bar-wpa-logout {
   display: none !important;
 }

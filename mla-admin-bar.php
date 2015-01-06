@@ -54,6 +54,9 @@ function mla_admin_bar_render() {
 	// Remove the WordPress logo...
 	$wp_admin_bar->remove_menu( 'wp-logo' );
 
+	// Remove the WordPress search...
+	$wp_admin_bar->remove_menu( 'search' );
+
 	// Remove the default notifications menu,
 	// because we're going to recreate it below. 
 	$wp_admin_bar->remove_menu( 'bp-notifications' ); 
