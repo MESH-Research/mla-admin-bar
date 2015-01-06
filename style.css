@@ -56,7 +56,6 @@
 
 
 /* Hide old search box */
-
 #wp-admin-bar-search {
   display: none !important;
 }
@@ -70,14 +69,11 @@
 /* "Me" Menu Avatar */ 
 #wpadminbar .avatar.avatar-28 { 
 	width: 21px; 
-	margin-bottom: 4px; /* nudge */ 
+	height: auto; 
 	border: 1px solid #444; 
 	border-radius: 3px; 
-} 
-.wp-admin #wpadminbar .avatar.avatar-28 { 
-	/* I don't know why, but the version of this avatar
-	 * that appears in /wp-admin is misaligned by a few pixels.
-	 */ 
+	/* These next two lines fix alignment issues */ 
+	vertical-align: top; 
 	margin-top: 4px; 
 } 
 
