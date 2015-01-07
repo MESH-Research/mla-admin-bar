@@ -42,7 +42,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wp-admin-bar-mla-bp-notifications .ab-item:before {
+/* the notifications icon */ 
+.dashicons.dashicons-testimonial {
   top: 2px;
   z-index: 20;
   font: 400 20px/1 dashicons!important;
@@ -50,7 +51,17 @@
   speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 2px; 
+  vertical-align: middle; 
+  color: #aaa; 
 }
+/* the notifications icon "on" */ 
+.pending-count .dashicons.dashicons-testimonial {
+	color: #fafafa; 
+} 
+#notification-number { 
+	margin: 0 3px; 
+} 
 
 /* Hover state */
 
