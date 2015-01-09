@@ -32,6 +32,16 @@
   -moz-osx-font-smoothing: grayscale;
 } 
 
+#wp-admin-bar-mla-group-breadcrumb-adminarea .ab-item:before { 
+  top: 2px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f115"; /* "View Site" icon */ 
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 
+
 #wp-admin-bar-bp-login .ab-item:before {
   top: 2px;
   z-index: 20;
