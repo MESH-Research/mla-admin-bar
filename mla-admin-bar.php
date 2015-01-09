@@ -94,6 +94,7 @@ add_action('admin_bar_menu', 'mla_add_searchlink', 15);
 function mla_add_blog_breadcrumb($admin_bar) {
 	$this_blogid = get_current_blog_id(); 
 	$this_blog_details = get_blog_details(); 
+        $site_url = $this_blog_details->siteurl; 	
 	$this_blog_name = $this_blog_details->blogname; 
 	$group_id = get_groupblog_group_id( get_current_blog_id() );
 	$group = groups_get_group( array( 'group_id' => $group_id) );
@@ -116,11 +117,20 @@ function mla_add_blog_breadcrumb($admin_bar) {
 		} 
 	} 	
 	if ( $url && $group_id && ! in_array($this_blogid, $disabled_blogids)) { 
-		$args = array(
-			'id' => 'mla-group-breadcrumb',
-			'title' => $this_blog_name, 
-			'href' => $url, 
-		);
+		// Is the user in the admin area? 
+		if ( is_admin() ) { 
+			$args = array(
+				'id' => 'mla-group-breadcrumb-adminarea',
+				'title' => $this_blog_name, 
+				'href' => $site_url, 
+			);
+		} else { 
+			$args = array(
+				'id' => 'mla-group-breadcrumb',
+				'title' => $this_blog_name, 
+				'href' => $url, 
+			);
+		} 
 		$admin_bar->add_menu($args);
 	} 
 }
