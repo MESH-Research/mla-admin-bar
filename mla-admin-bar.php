@@ -12,7 +12,7 @@ Description: This plugin adds the MLA Commons admin bar to any theme.
 function mla_add_my_stylesheet() {
 	// Respects SSL, Style.css is relative to the current file
 	wp_register_style( 'mla-admin-bar-style', plugins_url( 'style.css', __FILE__ ) );
-	wp_enqueue_style( 'mla-admin-bar-style' );
+	wp_enqueue_style( 'mla-admin-bar-style', false, false, '2.2.0' );
 }
 add_action( 'wp_enqueue_scripts', 'mla_add_my_stylesheet' );
 add_action( 'admin_enqueue_scripts', 'mla_add_my_stylesheet' );
