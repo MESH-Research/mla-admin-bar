@@ -176,7 +176,7 @@ function mla_loggedin_user_admin_bar( $wp_admin_bar ) {
 	) );
 
 	// Custom notifications menu without dropdown. 
-	$notifications = bp_notifications_get_notifications_for_user( bp_loggedin_user_id(), 'object' );
+	$notifications = bp_notifications_get_all_notifications_for_user( bp_loggedin_user_id() );
 	$count	       = ! empty( $notifications ) ? count( $notifications ) : 0;
 	$alert_class   = (int) $count > 0 ? 'pending-count alert' : 'count no-alert';
 	$menu_title    = '<span id="ab-pending-notifications" class="' . $alert_class . '"><span class="dashicons dashicons-testimonial"></span><span id="notification-number">' . number_format_i18n( $count ) . '</span></span>';
