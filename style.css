@@ -22,25 +22,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wp-admin-bar-mla-group-breadcrumb .ab-item:before { 
+#wp-admin-bar-mla-group-breadcrumb .ab-item:before {
   top: 2px;
   z-index: 20;
   font: 400 20px/1 dashicons!important;
-  content: "\f307"; /* "People" icon */ 
+  content: "\f307"; /* "People" icon */
   speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} 
+}
 
-#wp-admin-bar-mla-group-breadcrumb-adminarea .ab-item:before { 
+#wp-admin-bar-mla-group-breadcrumb-adminarea .ab-item:before {
   top: 2px;
   z-index: 20;
   font: 400 20px/1 dashicons!important;
-  content: "\f115"; /* "View Site" icon */ 
+  content: "\f115"; /* "View Site" icon */
   speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} 
+}
 
 #wp-admin-bar-bp-login .ab-item:before {
   top: 2px;
@@ -52,26 +52,37 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* the notifications icon */ 
+/* "Join the MLA" icon */
+#wp-admin-bar-mla-join .ab-item:before {
+  top: 3px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f464";
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* the notifications icon */
 .dashicons.dashicons-testimonial {
   top: 2px;
   z-index: 20;
   font: 400 20px/1 dashicons!important;
-  content: "\f473"; 
+  content: "\f473";
   speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 2px; 
-  vertical-align: middle; 
-  color: #aaa; 
+  padding: 2px;
+  vertical-align: middle;
+  color: #aaa;
 }
-/* the notifications icon "on" */ 
+/* the notifications icon "on" */
 .pending-count .dashicons.dashicons-testimonial {
-	color: #fafafa; 
-} 
-#notification-number { 
-	margin: 0 3px; 
-} 
+	color: #fafafa;
+}
+#notification-number {
+	margin: 0 3px;
+}
 
 /* Hover state */
 
@@ -90,59 +101,59 @@
   display: none !important;
 }
 
-/* "Me" Menu Avatar */ 
-#wpadminbar .avatar.avatar-28 { 
-	width: 21px; 
-	height: auto; 
-	border: 1px solid #444; 
-	border-radius: 3px; 
-	/* These next two lines fix alignment issues */ 
-	vertical-align: top; 
-	margin-top: 4px; 
-} 
+/* "Me" Menu Avatar */
+#wpadminbar .avatar.avatar-28 {
+	width: 21px;
+	height: auto;
+	border: 1px solid #444;
+	border-radius: 3px;
+	/* These next two lines fix alignment issues */
+	vertical-align: top;
+	margin-top: 4px;
+}
 
-#wpadminbar #wp-admin-bar-mla-bp-notifications .pending-count { 
-	background-color: #07d; 
-	border-radius: 3px; 
-	padding: 2px 5px; 
-} 
-#wpadminbar #wp-admin-bar-mla-bp-notifications .no-alert { 
-	background-color: #444; 
-	border-radius: 3px; 
-	padding: 2px 5px; 
-} 
+#wpadminbar #wp-admin-bar-mla-bp-notifications .pending-count {
+	background-color: #07d;
+	border-radius: 3px;
+	padding: 2px 5px;
+}
+#wpadminbar #wp-admin-bar-mla-bp-notifications .no-alert {
+	background-color: #444;
+	border-radius: 3px;
+	padding: 2px 5px;
+}
 
-@media only screen and (max-width: 783px) { 
-	#wp-toolbar > ul#wp-admin-bar-top-secondary > li { 
-		display: block; 
-	} 
-	#wp-toolbar > ul#wp-admin-bar-top-secondary > li a { 
-		padding-left: 0.5em; 
-		padding-right: 0.5em; 
+@media only screen and (max-width: 783px) {
+	#wp-toolbar > ul#wp-admin-bar-top-secondary > li {
+		display: block;
 	}
-	#wp-toolbar > ul#wp-admin-bar-top-secondary > li#wp-admin-bar-me a { 
+	#wp-toolbar > ul#wp-admin-bar-top-secondary > li a {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+	#wp-toolbar > ul#wp-admin-bar-top-secondary > li#wp-admin-bar-me a {
 		padding-top: 3px;
 	}
-	#wp-toolbar > ul#wp-admin-bar-top-secondary > li#wp-admin-bar-me .avatar { 
-		width: 28px; 
+	#wp-toolbar > ul#wp-admin-bar-top-secondary > li#wp-admin-bar-me .avatar {
+		width: 28px;
 	}
-	#wp-toolbar > ul > li#wp-admin-bar-bp-login { 
-		/* show otherwise hidden log in button */ 
-		display: block; 
-	} 
-	#wp-toolbar > ul > li#wp-admin-bar-bp-login a { 
-		padding-right: 10px; 
-		padding-left: 10px; 
-	} 
-	#wp-toolbar > ul > li#wp-admin-bar-bp-login a:before { 
-		margin: 11px 6px 0 0; 
+	#wp-toolbar > ul > li#wp-admin-bar-bp-login {
+		/* show otherwise hidden log in button */
+		display: block;
+	}
+	#wp-toolbar > ul > li#wp-admin-bar-bp-login a {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	#wp-toolbar > ul > li#wp-admin-bar-bp-login a:before {
+		margin: 11px 6px 0 0;
 		}
 }
-@media only screen and (max-width: 320px) { 
-	#wp-toolbar > ul#wp-admin-bar-top-secondary > li { 
-		display: none; 
-	} 
-	#wp-toolbar > ul#wp-admin-bar-top-secondary > li#wp-admin-bar-log-out { 
-		display: block; 
-	} 
+@media only screen and (max-width: 320px) {
+	#wp-toolbar > ul#wp-admin-bar-top-secondary > li {
+		display: none;
+	}
+	#wp-toolbar > ul#wp-admin-bar-top-secondary > li#wp-admin-bar-log-out {
+		display: block;
+	}
 }
