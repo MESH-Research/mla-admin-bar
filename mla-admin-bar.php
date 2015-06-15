@@ -40,8 +40,14 @@ function mla_admin_bar_render() {
 		$wp_admin_bar->add_menu( array(
 			'id' => 'bp-login',
 			'parent' => 'top-secondary',
-			'title' => __( 'Log in' ),
+			'title' => __( 'MLA Member Login' ),
 			'href' => wp_login_url( bp_get_requested_url() ),
+		) );
+		$wp_admin_bar->add_menu( array(
+			'id' => 'mla-join',
+			'parent' => 'top-secondary',
+			'title' => __( 'Join the MLA' ),
+			'href' => 'https://www.mla.org/join_new_intro',
 		) );
 	}
 
@@ -77,17 +83,6 @@ function mla_add_commonslink($admin_bar) {
 }
 
 add_action('admin_bar_menu', 'mla_add_commonslink', 10);
-
-function mla_add_searchlink($admin_bar) {
-	$args = array(
-		'id' => 'mla-search',
-		'title' => __('Search'),
-		'href' => network_home_url() . 'site-search/'
-	);
-	$admin_bar->add_menu($args);
-}
-
-//add_action('admin_bar_menu', 'mla_add_searchlink', 15);
 
 // add breadcrumb to blogs pages, so users can get back to blogs list easily.
 // -JR
