@@ -195,7 +195,7 @@ function mla_loggedin_user_admin_bar( $wp_admin_bar ) {
 		'id' => 'log-out', 
 		'parent' => 'top-secondary', 
 		'title' => 'Log Out', 
-		'href' => wp_logout_url(), 
+		'href' => wp_logout_url( home_url() ), 
 	) ); 
 
 	$wp_admin_bar->remove_menu( 'my-account' ); 
