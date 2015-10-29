@@ -12,6 +12,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#wp-admin-bar-mlaorg-link .ab-item:before {
+  top: 2px;
+  z-index: 20;
+  font: 400 20px/1 dashicons!important;
+  content: "\f227";
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 #wp-admin-bar-mla-search .ab-item:before {
   top: 2px;
   z-index: 20;
