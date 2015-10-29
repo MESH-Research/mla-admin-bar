@@ -76,7 +76,17 @@ function mla_add_commonslink($admin_bar) {
 	$admin_bar->add_menu($args);
 }
 
+function mla_add_mlaorglink($admin_bar) {
+	$args = array(
+		'id'	=> 'mlaorg-link',
+		'title' => __('MLA.org'),
+		'href'	=> 'https://www.mla.org'
+	);
+	$admin_bar->add_menu($args);
+}
+
 add_action('admin_bar_menu', 'mla_add_commonslink', 10);
+add_action('admin_bar_menu', 'mla_add_mlaorglink', 10);
 
 function mla_add_searchlink($admin_bar) {
 	$args = array(
